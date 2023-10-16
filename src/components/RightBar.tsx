@@ -1,24 +1,28 @@
-import { Card, Space, Tag } from 'antd';
+import { Card, Group, Stack } from '@mantine/core';
 import SearchTag from './SearchTag';
 
 export default function RightBar() {
   return (
-    <Space direction='vertical'>
-      <Card style={{ width: 300 }}>
+    <Stack>
+      <Card>
         <p>Card content</p>
       </Card>
-      <Card style={{ width: 300 }}>
-        <SearchTag title='www' />
-        <SearchTag title='www' />
-        <SearchTag title='www' />
-        <SearchTag title='www' />
+      <Card>
+        <Group>
+          <SearchTag title='wwqrqwwqrqwrwqww' />
+          <SearchTag title='www' />
+          <SearchTag title='www' />
+          <SearchTag title='www' />
+        </Group>
       </Card>
-      <Card style={{ width: 300 }}>
-        <SearchTag title='www' />
-        <SearchTag title='www' />
-        <SearchTag title='www' />
-        <SearchTag title='www' />
+      <Card>
+        <Group>
+          <SearchTag title='www' />
+          <SearchTag title='www' />
+          <SearchTag title='www' />
+          <SearchTag title='www' />
+        </Group>
       </Card>
-    </Space>
+    </Stack>
   );
 }

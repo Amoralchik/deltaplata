@@ -3,22 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ConfigProvider, ThemeConfig } from 'antd';
+import '@mantine/core/styles.css';
 import { BrowserRouter } from 'react-router-dom';
+import { MantineProvider, createTheme } from '@mantine/core';
 
-const config: ThemeConfig = {
-  token: {
-    fontFamily: 'Poppins',
-  },
-};
+const theme = createTheme({
+  /** Put your mantine theme override here */
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter basename='/'>
-      <ConfigProvider theme={config}>
+      <MantineProvider theme={theme}>
         <App />
-      </ConfigProvider>
+      </MantineProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

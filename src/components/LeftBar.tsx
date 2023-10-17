@@ -1,39 +1,55 @@
-import { Button, Card, Checkbox, Dropdown, Space, Typography } from 'antd';
-import { CheckboxChangeEvent } from 'antd/es/checkbox';
+import { Button, Checkbox, Select, Stack, Text, Badge } from '@mantine/core';
+import { useState } from 'react';
+import BasicCard from './BasicCard';
 
 export default function LeftBar() {
-  const onChange = (e: CheckboxChangeEvent) => {
-    console.log(`checked = ${e.target.checked}`);
+  const [checkboxes, setCheckboxes] = useState([
+    { label: 'Checkbox', checked: false, key: 1 },
+    { label: 'Checkbox', checked: false, key: 2 },
+    { label: 'Checkbox', checked: false, key: 3 },
+    { label: 'Checkbox', checked: false, key: 4 },
+    { label: 'Checkbox', checked: false, key: 5 },
+    { label: 'Checkbox', checked: false, key: 6 },
+    { label: 'Checkbox', checked: false, key: 7 },
+    { label: 'Checkbox', checked: false, key: 8 },
+    { label: 'Checkbox', checked: false, key: 9 },
+    { label: 'Checkbox', checked: false, key: 10 },
+  ]);
+  const [activesCheckboxes, setActivesCheckboxes] = useState(0);
+
+  const onChange = (boxes: any) => {
+    const updatedBoxes = checkboxes.map((box) => {
+      if (boxes.key === box.key) {
+        setActivesCheckboxes(!boxes.checked ? activesCheckboxes + 1 : activesCheckboxes - 1);
+        return { ...box, checked: !box.checked };
+      }
+      return box;
+    });
+    setCheckboxes(updatedBoxes);
   };
+
+  const onClick = () => {
+    const updatedBoxes = checkboxes.map((box) => ({ ...box, checked: false }));
+    setCheckboxes(updatedBoxes);
+    setActivesCheckboxes(0);
+  };
+
   return (
-    <Card style={{ width: 300 }}>
-      <Typography.Title>Special Filter</Typography.Title>
-      <Space
-        direction='vertical'
-        style={{ maxHeight: '300px', minWidth: '100%', margin: '0px 4px', overflowY: 'scroll' }}>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-        <Checkbox onChange={onChange}>Checkbox</Checkbox>
-      </Space>
-      <Button> Remove all filter </Button>
-      <div>
-        <Typography.Text> Country Filter </Typography.Text>
-        <Dropdown menu={{ items: [] }} trigger={['click']}>
-          <a onClick={(e) => e.preventDefault()}>
-            <Button>Hover me</Button>
-          </a>
-        </Dropdown>
-      </div>
-    </Card>
+    <BasicCard title='Special Filter' titleChildren={<Badge miw={50}>{activesCheckboxes || '0'}</Badge>}>
+      <Stack>
+        <Stack style={{ maxHeight: '350px', minWidth: '100%', margin: '0px 4px', overflowY: 'scroll' }}>
+          {checkboxes.map((box) => (
+            <Checkbox onChange={() => onChange(box)} checked={box.checked} label='Checkbox' key={box.key} />
+          ))}
+        </Stack>
+        <Button radius='xl' onClick={onClick}>
+          Remove all filter
+        </Button>
+        <Stack>
+          <Text> Country Filter </Text>
+          <Select data={['React', 'Angular', 'Vue', 'Svelte']} />
+        </Stack>
+      </Stack>
+    </BasicCard>
   );
 }

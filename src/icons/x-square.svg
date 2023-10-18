@@ -1,5 +1,5 @@
 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.5368 1.99243H4.20345C3.46707 1.99243 2.87012 2.58939 2.87012 3.32577V12.6591C2.87012 13.3955 3.46707 13.9924 4.20345 13.9924H13.5368C14.2732 13.9924 14.8701 13.3955 14.8701 12.6591V3.32577C14.8701 2.58939 14.2732 1.99243 13.5368 1.99243Z" stroke="#141413" stroke-width="1.33397" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6.87012 5.99243L10.8701 9.99243" stroke="#141413" stroke-width="1.33397" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10.8701 5.99243L6.87012 9.99243" stroke="#141413" stroke-width="1.33397" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.5368 1.99243H4.20345C3.46707 1.99243 2.87012 2.58939 2.87012 3.32577V12.6591C2.87012 13.3955 3.46707 13.9924 4.20345 13.9924H13.5368C14.2732 13.9924 14.8701 13.3955 14.8701 12.6591V3.32577C14.8701 2.58939 14.2732 1.99243 13.5368 1.99243Z" stroke="currentColor" stroke-width="1.33397" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.87012 5.99243L10.8701 9.99243" stroke="currentColor" stroke-width="1.33397" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.8701 5.99243L6.87012 9.99243" stroke="currentColor" stroke-width="1.33397" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

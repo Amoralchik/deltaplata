@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Container, Grid, Group, Image, Input, Text } from '@mantine/core';
+import { ActionIcon, Button, Container, Grid, Group, Input, Text } from '@mantine/core';
 import { SearchIcon } from '../icons';
 import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -27,7 +27,7 @@ export default function Header() {
         <Grid.Col span={6}>
           <Group>
             <ActionIcon onClick={onClick} radius='xl' color='#141413' style={{ border: '1px solid #B8C0C8' }}>
-              <Image src={SearchIcon} mah={100} w='auto' />
+              <SearchIcon color='#FFFFFF' />
             </ActionIcon>
             <Input
               onKeyDown={onKeyDown}
@@ -42,7 +42,7 @@ export default function Header() {
         <Grid.Col span={3}>
           <Group wrap='nowrap'>
             <Text style={{ color: '#FFFFFF', whiteSpace: 'nowrap', fontSize: '16px' }}>Looking for more details?</Text>
-            <Button color='#ffffff' radius='lg'>
+            <Button color='#FFFFFF' radius='lg'>
               <Text c='black'>Advanced Search</Text>
             </Button>
           </Group>

@@ -1,9 +1,9 @@
 import LeftBar from '../components/LeftBar';
 import RightBar from '../components/RightBar';
-import { Button, Image, Input, Stack, Text, Flex, Grid } from '@mantine/core';
+import { Button, Image, Input, Stack, Text, Flex, Grid, Group } from '@mantine/core';
 import image9 from '../img/image9.png';
 import ContentHeader from '../components/ContentHeader';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChangeEvent, useState, KeyboardEvent } from 'react';
 
 export default function Main() {

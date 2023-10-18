@@ -1,4 +1,4 @@
-import { Group, Image, Stack } from '@mantine/core';
+import { Group, Stack } from '@mantine/core';
 import SearchTag from './SearchTag';
 import BasicCard from './BasicCard';
 import { UploadIcon } from '../icons/index';
@@ -20,7 +20,7 @@ export default function RightBar() {
               gap: '8px',
               display: 'inline-flex',
             }}>
-            <Image src={UploadIcon} mah={300} w='auto' />
+            <UploadIcon />
             <div style={{ color: '#777F86' }}>Max 20MB</div>
           </div>
         }></BasicCard>

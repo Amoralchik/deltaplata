@@ -4,6 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 import { BrowserRouter } from 'react-router-dom';
 import { MantineProvider, createTheme } from '@mantine/core';
 
